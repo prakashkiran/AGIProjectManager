@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "92074829046",
+    "firebase_url": "https://agi-pm.firebaseio.com",
+    "project_id": "agi-pm",
+    "storage_bucket": "agi-pm.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:92074829046:android:97ca45e6279d620d",
+        "android_client_info": {
+          "package_name": "com.example.welcome.agiprojectmanager"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "92074829046-eam24f5m9tmarmr22bqosdl13sn6r9rk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.welcome.agiprojectmanager",
+            "certificate_hash": "7eefc634969f9774851b6471f7633a1dd4252a85"
+          }
+        },
+        {
+          "client_id": "92074829046-scs61gm8p9eo2me8spb711usv3tsh138.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDg5uZvDgXp8FNckcF2tYIIVi3yNPBOPkw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "92074829046-scs61gm8p9eo2me8spb711usv3tsh138.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
