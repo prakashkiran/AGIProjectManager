@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -21,14 +22,18 @@ import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 
+import java.io.File;
 import java.io.IOException;
+
+import static android.R.id.message;
 
 public class Upload extends AppCompatActivity implements View.OnClickListener {
     private static final int PICK_IMAGE_REQUEST = 123;
     private ImageView imgv;
     private Button Choosebtn;
     private Button Uploadbtn;
-    private Uri filePath;
+    private Uri file;
+    private TextView tv;
     private StorageReference mStorageRef;
 
     @Override
@@ -39,28 +44,28 @@ public class Upload extends AppCompatActivity implements View.OnClickListener {
         imgv = (ImageView) findViewById(R.id.imgv);
         Choosebtn = (Button) findViewById(R.id.Choosebtn);
         Uploadbtn = (Button) findViewById(R.id.Uploadbtn);
-
+        tv=(TextView)findViewById(R.id.tv);
         Choosebtn.setOnClickListener(this);
         Uploadbtn.setOnClickListener(this);
     }
 
     private void shoFileChooser() {
         Intent intent = new Intent();
-        intent.setType("application/pdf");
+        intent.setType("*/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
         startActivityForResult(Intent.createChooser(intent, "Select an Image"), PICK_IMAGE_REQUEST);
 
     }
 
     private void uploadFile() {
-        if (filePath != null) {
+        if (file != null) {
             final ProgressDialog progressDialog = new ProgressDialog(this);
             progressDialog.setTitle("Uploading...");
             progressDialog.show();
 
-            StorageReference riversRef = mStorageRef.child("files/profiles.pdf");
+            StorageReference riversRef =mStorageRef.child("" + file.getPathSegments());
 
-            riversRef.putFile(filePath)
+            riversRef.putFile(file)
                     .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                         @Override
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
@@ -80,7 +85,7 @@ public class Upload extends AppCompatActivity implements View.OnClickListener {
                         @Override
                         public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
                             double progress = (100 * taskSnapshot.getBytesTransferred()) / taskSnapshot.getTotalByteCount();
-                            progressDialog.setMessage(((int) progress) + "Uploaded...");
+                            progressDialog.setMessage(((int) progress) + "% Uploaded...");
                         }
                     });
         } else {
@@ -93,9 +98,12 @@ public class Upload extends AppCompatActivity implements View.OnClickListener {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) {
-            filePath = data.getData();
+            file = data.getData();
+            File myFile = new File(file.toString());
+            String path = myFile.getAbsolutePath();
+            tv.setText(path);
             try {
-                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), filePath);
+                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), file);
                 imgv.setImageBitmap(bitmap);
 
             } catch (IOException e) {

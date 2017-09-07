@@ -4,35 +4,47 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/pink"
     tools:context="com.example.welcome.agiprojectmanager.Upload">
+
     <Button
         android:id="@+id/Choosebtn"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
+        android:layout_width="400dp"
+        android:layout_height="90dp"
+        android:background="@drawable/shape"
+        android:backgroundTint="@android:color/transparent"
         android:text="Choose File"
-        android:background="@color/colorPrimaryDark"
         android:textColor="@color/colorAccent"
-        android:layout_marginTop="18dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentStart="true" />
 
     <Button
 
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:text="Upload"
-        android:background="@color/colorPrimaryDark"
-        android:textColor="@color/colorAccent"
         android:id="@+id/Uploadbtn"
-        android:layout_marginBottom="62dp"
+        android:layout_width="400dp"
+        android:layout_height="90dp"
+        android:background="@drawable/shape"
+        android:backgroundTint="@android:color/transparent"
+        android:text="Upload"
+        android:textColor="@color/colorAccent"
         android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/Choosebtn" />
+        android:layout_alignParentStart="true" />
+
     <ImageView
         android:id="@+id/imgv"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_below="@+id/Choosebtn"
-        android:layout_alignStart="@+id/Choosebtn"
-        android:layout_marginTop="81dp" />
+        android:layout_width="400dp"
+        android:layout_height="250dp"
+        android:layout_above="@+id/Uploadbtn"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="28dp" />
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:layout_above="@+id/imgv"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="21dp"
+        />
 
 </RelativeLayout>

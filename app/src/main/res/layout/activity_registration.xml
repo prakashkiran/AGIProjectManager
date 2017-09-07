@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
+    android:background="@drawable/pink"
     tools:context="com.example.welcome.agiprojectmanager.Registration">
     <ScrollView
         android:layout_width="match_parent"
@@ -95,7 +95,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/pf"
-            android:text="Password"
+            android:hint="Password"
             android:textColor="@color/colorAccent"
              android:inputType="numberPassword" />
     </android.support.design.widget.TextInputLayout>
@@ -161,7 +161,8 @@
         android:layout_height="wrap_content"
         android:text="Submit"
         android:layout_below="@+id/pofi"
-        android:background="@color/colorPrimaryDark"
+        android:background="@drawable/shape"
+        android:backgroundTint="@android:color/transparent"
         android:textColor="@color/colorAccent"/>
 </RelativeLayout>
 </ScrollView>

@@ -4,28 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
+    android:background="@drawable/pink"
     tools:context="com.example.welcome.agiprojectmanager.Home">
+
     <Button
         android:id="@+id/Loginbt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="250dp"
+        android:layout_height="75dp"
+        android:background="@drawable/shape"
+        android:backgroundTint="@android:color/transparent"
         android:text="Login"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="182dp"
-        android:background="@color/colorPrimaryDark"
-        android:textColor="@color/colorAccent"/>
+        android:textColor="@color/colorAccent"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
     <Button
         android:id="@+id/Regbt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Register"
-        android:background="@color/colorPrimaryDark"
-        android:textColor="@color/colorAccent"
+        android:layout_width="250dp"
+        android:layout_height="75dp"
+        android:layout_alignStart="@+id/Loginbt"
         android:layout_below="@+id/Loginbt"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="17dp" />
+        android:layout_marginTop="17dp"
+        android:background="@drawable/shape"
+        android:backgroundTint="@android:color/transparent"
+        android:text="Register"
+        android:textColor="@color/colorAccent" />
 
 
 </RelativeLayout>
